@@ -74,7 +74,7 @@ const MyApp = () => {
         <Image source={require('./img/elephant.jpg')} style={{ width: 391.5, height: 300 }} />
             <View style={styles.picker}>
               <RNPickerSelect
-                onValueChange={setAnswer1}
+                onValueChange={(value)=>setAnswer1(value)}
                 items={[
                   { label: 'Rhino', value: 'Rhino' },
                   { label: 'Elephant', value: 'Elephant' },
@@ -87,7 +87,7 @@ const MyApp = () => {
             <Image source={require('./img/leopard.jpg')} style={{ width: 391.5, height: 300 }} />
             <View style={styles.picker}>
                 <RNPickerSelect
-                    onValueChange={setAnswer2}
+                    onValueChange={(value)=>setAnswer2(value)}
                     items={[
                       { label: 'Leopard', value: 'Leopard' },
                       { label: 'Rabbit', value: 'Rabbit' },
@@ -100,7 +100,7 @@ const MyApp = () => {
             <Image source={require('./img/hummingbird.jpg')} style={{ width: 391.5, height: 300 }} />
             <View style={styles.picker}>
                 <RNPickerSelect
-                    onValueChange={setAnswer3}
+                    onValueChange={(value)=>setAnswer3(value)}
                     items={[
                       { label: 'Zebra', value: 'Zebra' },
                       { label: 'HummingBird', value: 'HummingBird' },
