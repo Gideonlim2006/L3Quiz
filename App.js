@@ -5,7 +5,8 @@ import Icon from "react-native-vector-icons/FontAwesome6";
 
 const styles = StyleSheet.create({
     box: {
-    padding: 10
+    padding: 10,
+
     },
     text: {
         fontSize: 20,
@@ -64,7 +65,7 @@ const MyApp = () => {
         <Text></Text>
         <View style={{justifyContent: 'center', alignItems: 'center' }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ color: "#3f9b0b", textAlign: "center", fontSize: 30, paddingRight: 10 }}>Animal Quiz</Text>
+            <Text style={{ color: "#3f9b0b", textAlign: "center", fontSize: 30, paddingRight: 10, borderBottomWidth: 2, borderColor: "#3f9b0b"}}>Animal Quiz</Text>
             <Icon name="paw" size={30} color="#3f9b0b" />
           </View>
         </View>
