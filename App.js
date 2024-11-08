@@ -16,13 +16,16 @@ const styles = StyleSheet.create({
         marginTop: 10,
         borderColor: "#4F7942",
         backgroundColor: '#AFE1AF',
+    },
+    picker: {
+        backgroundColor: '#4F7942',
     }
 })
 
-const InputArea = ({ poster, onChangeValue, options }) => {
+const InputArea = ({onChangeValue, options }) => {
   return (
       <View style={{backgroundColor: "#4F7942"}}>
-        <Image source={poster} style={{ width: 391.5, height: 300 }} />
+
         <Text style={styles.text}>What animal is this?</Text>
         <RNPickerSelect
             onValueChange={onChangeValue}
@@ -67,37 +70,43 @@ const MyApp = () => {
         </View>
           <TextInput style={{borderWidth: 1, margin: 20}} placeholder = " Enter your name" onChangeText={(text) => setName(text)}/>
         <View style={styles.box}>
-          <InputArea
-            poster={require('./img/elephant.jpg')}
-            onChangeValue={setAnswer1}
-            options={[
-              { label: 'Rhino', value: 'Rhino' },
-              { label: 'Elephant', value: 'Elephant' },
-              { label: 'Zebra', value: 'Zebra' },
-            ]}
-            />
-        </View>
-        <View style={styles.box}>
-            <InputArea
-                poster={require('./img/leopard.jpg')}
-                onChangeValue={setAnswer2}
-                options={[
-                  { label: 'Leopard', value: 'Leopard' },
-                  { label: 'Rabbit', value: 'Rabbit' },
+        <Image source={require('./img/elephant.jpg')} style={{ width: 391.5, height: 300 }} />
+            <View style={styles.picker}>
+              <RNPickerSelect
+                onValueChange={setAnswer1}
+                items={[
+                  { label: 'Rhino', value: 'Rhino' },
                   { label: 'Elephant', value: 'Elephant' },
+                  { label: 'Zebra', value: 'Zebra' },
                 ]}
-            />
+                />
+            </View>
         </View>
         <View style={styles.box}>
-            <InputArea
-                poster={require('./img/hummingbird.jpg')}
-                onChangeValue={setAnswer3}
-                options={[
-                  { label: 'Zebra', value: 'Zebra' },
-                  { label: 'HummingBird', value: 'HummingBird' },
-                  { label: 'Rabbit', value: 'Rabbit' },
-                ]}
-            />
+            <Image source={require('./img/leopard.jpg')} style={{ width: 391.5, height: 300 }} />
+            <View style={styles.picker}>
+                <RNPickerSelect
+                    onValueChange={setAnswer2}
+                    items={[
+                      { label: 'Leopard', value: 'Leopard' },
+                      { label: 'Rabbit', value: 'Rabbit' },
+                      { label: 'Elephant', value: 'Elephant' },
+                    ]}
+                />
+            </View>
+        </View>
+        <View style={styles.box}>
+            <Image source={require('./img/hummingbird.jpg')} style={{ width: 391.5, height: 300 }} />
+            <View style={styles.picker}>
+                <RNPickerSelect
+                    onValueChange={setAnswer3}
+                    items={[
+                      { label: 'Zebra', value: 'Zebra' },
+                      { label: 'HummingBird', value: 'HummingBird' },
+                      { label: 'Rabbit', value: 'Rabbit' },
+                    ]}
+                />
+            </View>
         </View>
         <Button title="Submit Answers" onPress={handleSubmit}/>
       </ScrollView>
